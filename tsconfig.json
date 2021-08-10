@@ -14,6 +14,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "payswitch-angular": [
+        "dist/payswitch-angular/payswitch-angular",
+        "dist/payswitch-angular"
+      ]
+    },
     "target": "es2017",
     "module": "es2020",
     "lib": [

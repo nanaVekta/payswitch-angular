@@ -3,5 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "payswitch-angular": {
+      "projectType": "library",
+      "root": "projects/payswitch-angular",
+      "sourceRoot": "projects/payswitch-angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/payswitch-angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/payswitch-angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/payswitch-angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/payswitch-angular/src/test.ts",
+            "tsConfig": "projects/payswitch-angular/tsconfig.spec.json",
+            "karmaConfig": "projects/payswitch-angular/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "payswitch-angular"
 }
